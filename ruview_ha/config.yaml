@@ -1,7 +1,7 @@
 name: RuView HA
 slug: ruview_ha
 description: WiFi-based presence, fall detection, and vitals monitoring — no cameras.
-version: 0.1.2
+version: 0.1.3
 init: false
 url: https://github.com/ernet1/ruview-ha-addon
 arch:
