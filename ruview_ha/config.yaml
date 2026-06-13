@@ -10,6 +10,7 @@ startup: application
 boot: auto
 ingress: true
 ingress_port: 8099
+init: false
 panel_icon: mdi:wifi
 homeassistant: 2024.1.0
 host_network: false
