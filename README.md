@@ -52,7 +52,7 @@ In Home Assistant: **Settings → Add-ons → Add-on Store → ⋮ → Repositor
 
 Add:
 ```
-https://github.com/bibinabraham06/ruview-ha-addon
+https://github.com/ernet1/ruview-ha-addon
 ```
 
 ### 2. Install the add-on
