@@ -17,5 +17,6 @@ COPY services/bridge/run /etc/services.d/bridge/run
 RUN chmod +x /etc/services.d/bridge/run
 
 WORKDIR /app
+ENV PYTHONPATH=/app
 ENV BRIDGE_PORT=8099
 ENV RUVIEW_URL=http://localhost:3000
