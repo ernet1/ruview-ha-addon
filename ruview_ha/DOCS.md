@@ -33,5 +33,5 @@ Breathing rate and heart rate readings are **indicative only** — derived from 
 
 ## Support
 
-- Bugs and feature requests: [github.com/bibinabraham06/ruview-ha-addon/issues](https://github.com/bibinabraham06/ruview-ha-addon/issues)
+- Bugs and feature requests: [github.com/ernet1/ruview-ha-addon/issues](https://github.com/ernet1/ruview-ha-addon/issues)
 - Discussions: GitHub Discussions tab
