@@ -1,20 +1,40 @@
 # ruview-ha-addon/bridge/api.py
 import json
 import logging
+import os
 from aiohttp import web
 import aiohttp
 from bridge.zone_registry import ZoneRegistry
 
 log = logging.getLogger(__name__)
 
+UI_DIR = "/app/ui"
+
 def create_app(registry: ZoneRegistry) -> web.Application:
     app = web.Application()
     app["registry"] = registry
 
+    # -------------------------
+    # API
+    # -------------------------
     app.router.add_get("/health", handle_health)
     app.router.add_get("/api/sensing/latest", handle_sensing_latest)
     app.router.add_get("/ws", handle_websocket)
 
+    # -------------------------
+    # UI (FIX FÖR 404)
+    # -------------------------
+    async def index(request):
+        return web.FileResponse(os.path.join(UI_DIR, "index.html"))
+
+    app.router.add_get("/", index)
+    app.router.add_static("/ui/", UI_DIR)
+
+    async def fallback(request):
+        return web.FileResponse(os.path.join(UI_DIR, "index.html"))
+
+    app.router.add_get("/{tail:.*}", fallback)
+    
     return app
 
 async def handle_health(request: web.Request) -> web.Response:
